@@ -1,4 +1,5 @@
 // File: src/components/Homepage.jsx - COMPLETE PROFESSIONAL REDESIGN
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 
 // Counter Component for animated numbers

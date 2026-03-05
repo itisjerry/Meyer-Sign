@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dark slate background -->
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <!-- Amber "M" letterform styled like a channel letter sign -->
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+    font-family="Arial Black, Arial, sans-serif" font-weight="900"
+    font-size="40" fill="#f59e0b">M</text>
+  <!-- Subtle amber glow line at bottom (evokes illuminated sign base) -->
+  <rect x="14" y="54" width="36" height="2" rx="1" fill="#f59e0b" opacity="0.4"/>
+</svg>

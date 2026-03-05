@@ -1,6 +1,223 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 
+// ─── SERVICE VISUALS — Custom SVG illustrations, no stock photos ──────────────
+const ServiceVisual = ({ name }) => {
+  switch (name) {
+    case 'Channel Letters':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-900">
+          <div className="absolute inset-0" style={{background:'radial-gradient(ellipse 80% 50% at 50% 65%, rgba(245,158,11,0.18) 0%, transparent 70%)'}} />
+          <div className="relative" style={{filter:'drop-shadow(0 0 12px rgba(245,158,11,0.65))'}}>
+            <svg viewBox="0 0 180 78" className="w-36 sm:w-44">
+              <text x="10" y="62" fontSize="57" fontWeight="900" fontFamily="'Arial Black',sans-serif" fill="rgba(161,89,0,0.45)" letterSpacing="6">ABC</text>
+              <text x="8" y="59" fontSize="57" fontWeight="900" fontFamily="'Arial Black',sans-serif" fill="#f59e0b" letterSpacing="6">ABC</text>
+            </svg>
+          </div>
+          <div className="absolute bottom-2 right-3 flex gap-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" style={{animationDelay:'0.15s'}} />
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" style={{animationDelay:'0.3s'}} />
+          </div>
+          <div className="absolute bottom-2 left-3 text-amber-400/50 text-[8px] font-bold tracking-widest uppercase">LED Illuminated</div>
+        </div>
+      );
+
+    case 'Monument Signs':
+      return (
+        <div className="w-full h-full flex items-end justify-center relative overflow-hidden bg-gradient-to-b from-sky-200 to-slate-300 pb-1">
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-slate-400" />
+          <div className="absolute bottom-8 left-0 right-0 h-2 bg-green-700/50" />
+          <div className="relative flex flex-col items-center mb-7 z-10">
+            <div className="bg-slate-800 border border-slate-600 px-4 py-2.5 w-36 text-center shadow-2xl rounded-sm">
+              <div className="text-amber-400 text-[9px] font-black tracking-widest uppercase">RIVERSIDE PLAZA</div>
+              <div className="border-t border-amber-500/30 pt-1 mt-1">
+                <div className="text-slate-300 text-[7px] tracking-widest">Est. 1990 · Suite 100</div>
+              </div>
+            </div>
+            <div className="w-32 h-10 relative overflow-hidden"
+              style={{background:'repeating-linear-gradient(180deg,#94a3b8 0,#94a3b8 8px,#7a8fa0 8px,#7a8fa0 9px)'}}>
+              <div className="absolute inset-0" style={{backgroundImage:'repeating-linear-gradient(90deg,transparent 0,transparent 18px,rgba(0,0,0,0.12) 18px,rgba(0,0,0,0.12) 19px)'}} />
+            </div>
+            <div className="w-40 h-3 bg-slate-500 rounded-b-sm" />
+          </div>
+        </div>
+      );
+
+    case 'Pylon Signs':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-sky-300 to-sky-100">
+          <div className="flex flex-col items-center">
+            <div className="bg-slate-800 border border-slate-600 rounded-sm w-24 shadow-2xl overflow-hidden">
+              <div className="bg-amber-500 px-2 py-1.5 text-center">
+                <div className="text-slate-900 text-[8px] font-black tracking-widest">PLAZA CENTER</div>
+              </div>
+              <div className="bg-white px-2 py-1.5 space-y-1.5">
+                <div className="flex items-center justify-between gap-1">
+                  <div className="bg-red-600 text-white text-[6px] px-1 py-0.5 font-black rounded-sm">TARGET</div>
+                  <div className="text-slate-400 text-[6px]">Anchor</div>
+                </div>
+                <div className="flex items-center justify-between gap-1">
+                  <div className="bg-blue-700 text-white text-[6px] px-1 py-0.5 font-black rounded-sm">BANK</div>
+                  <div className="text-slate-400 text-[6px]">Suite A</div>
+                </div>
+                <div className="flex items-center justify-between gap-1">
+                  <div className="bg-green-700 text-white text-[6px] px-1 py-0.5 font-black rounded-sm">CAFÉ</div>
+                  <div className="text-slate-400 text-[6px]">Suite B</div>
+                </div>
+              </div>
+            </div>
+            <div className="w-3 bg-gradient-to-b from-slate-500 to-slate-600 shadow-lg" style={{height:'56px'}} />
+            <div className="w-10 h-3 bg-slate-500 rounded-sm" />
+          </div>
+        </div>
+      );
+
+    case 'LED Message Centers':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-950">
+          <div className="relative">
+            <div className="bg-slate-800 border-2 border-slate-500 rounded-xl p-2 shadow-2xl">
+              <div className="bg-black rounded-lg p-3 relative overflow-hidden" style={{width:'138px',height:'68px'}}>
+                <div className="absolute inset-0 pointer-events-none opacity-20"
+                  style={{backgroundImage:'repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.5) 2px,rgba(0,0,0,0.5) 3px)'}} />
+                <div className="text-red-500 text-[10px] font-mono font-bold">TODAY'S SPECIAL</div>
+                <div className="text-amber-400 text-[14px] font-mono font-black mt-0.5">50% OFF!</div>
+                <div className="text-green-400 text-[9px] font-mono mt-1">OPEN 8AM – 9PM</div>
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              </div>
+              <div className="flex items-center justify-between px-1 pt-1.5">
+                <div className="text-slate-500 text-[7px] font-mono">LED MESSAGE CENTER</div>
+                <div className="flex gap-0.5">
+                  {[1,2,3].map(i => <div key={i} className="w-1 h-2 rounded-sm bg-slate-600" />)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+
+    case 'Vehicle Wraps':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-100">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-200" />
+          <svg viewBox="0 0 190 110" className="w-full h-full py-2 px-1">
+            <rect x="15" y="38" width="158" height="48" rx="5" fill="#1e3a8a"/>
+            <path d="M28 38 Q32 20 50 17 L145 17 Q162 17 165 38" fill="#172554"/>
+            <path d="M50 19 Q51 29 54 38 L118 38 L118 19 Z" fill="#7dd3fc" opacity="0.45"/>
+            <rect x="128" y="24" width="30" height="13" rx="3" fill="#7dd3fc" opacity="0.45"/>
+            <path d="M15 58 L72 40 L173 50 L173 58 Z" fill="#3b82f6" opacity="0.55"/>
+            <rect x="22" y="44" width="85" height="18" rx="2" fill="rgba(255,255,255,0.1)"/>
+            <text x="30" y="55" fontSize="7.5" fontWeight="900" fill="white" fontFamily="Arial">CASCADE PLUMBING</text>
+            <text x="30" y="64" fontSize="6" fill="#fbbf24" fontFamily="Arial">(360) 555-0100</text>
+            <circle cx="58" cy="89" r="12" fill="#0f172a"/>
+            <circle cx="58" cy="89" r="7" fill="#334155"/>
+            <circle cx="58" cy="89" r="3" fill="#64748b"/>
+            <circle cx="145" cy="89" r="12" fill="#0f172a"/>
+            <circle cx="145" cy="89" r="7" fill="#334155"/>
+            <circle cx="145" cy="89" r="3" fill="#64748b"/>
+          </svg>
+        </div>
+      );
+
+    case 'Vinyl & Window Graphics':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-200">
+          <svg viewBox="0 0 160 110" className="w-full h-full">
+            <rect x="0" y="0" width="160" height="110" fill="#cbd5e1"/>
+            <rect x="8" y="6" width="144" height="86" rx="3" fill="#94a3b8"/>
+            <rect x="12" y="10" width="136" height="78" rx="2" fill="#1e40af"/>
+            <rect x="12" y="10" width="136" height="31" fill="#1d4ed8"/>
+            <text x="80" y="32" fontSize="19" fontWeight="900" fill="white" fontFamily="Arial Black" textAnchor="middle">OPEN</text>
+            <rect x="12" y="41" width="136" height="1" fill="rgba(255,255,255,0.15)"/>
+            <text x="80" y="63" fontSize="11" fontWeight="bold" fill="#fbbf24" fontFamily="Arial" textAnchor="middle">GRAND OPENING</text>
+            <text x="80" y="78" fontSize="8" fill="white" fontFamily="Arial" textAnchor="middle" opacity="0.7">meyersign.com</text>
+            <rect x="8" y="6" width="144" height="86" rx="3" fill="none" stroke="#64748b" strokeWidth="3"/>
+            <rect x="55" y="64" width="50" height="38" rx="1" fill="#94a3b8"/>
+            <rect x="58" y="67" width="44" height="33" rx="1" fill="#bfdbfe" opacity="0.35"/>
+            <circle cx="98" cy="83" r="2" fill="#64748b"/>
+          </svg>
+        </div>
+      );
+
+    case 'Wayfinding & ADA':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-white">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100" />
+          <svg viewBox="0 0 160 110" className="w-5/6">
+            <rect x="8" y="5" width="144" height="100" rx="4" fill="#1e293b"/>
+            <rect x="12" y="9" width="136" height="92" rx="3" fill="#0f172a"/>
+            <rect x="12" y="9" width="136" height="19" rx="3" fill="#1e3a8a"/>
+            <text x="80" y="22" fontSize="7.5" fill="white" fontFamily="Arial" fontWeight="bold" textAnchor="middle">BUILDING DIRECTORY</text>
+            <line x1="12" y1="32" x2="148" y2="32" stroke="#1e3a8a" strokeWidth="0.7"/>
+            <text x="19" y="45" fontSize="7" fill="#94a3b8" fontFamily="Arial">Reception</text>
+            <text x="143" y="45" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">→</text>
+            <line x1="12" y1="51" x2="148" y2="51" stroke="#1e293b" strokeWidth="0.7"/>
+            <text x="19" y="63" fontSize="7" fill="#94a3b8" fontFamily="Arial">Suites 100–150</text>
+            <text x="143" y="63" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">→</text>
+            <line x1="12" y1="69" x2="148" y2="69" stroke="#1e293b" strokeWidth="0.7"/>
+            <text x="19" y="81" fontSize="7" fill="#94a3b8" fontFamily="Arial">Conference Rooms</text>
+            <text x="143" y="81" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">↑</text>
+            <line x1="12" y1="87" x2="148" y2="87" stroke="#1e293b" strokeWidth="0.7"/>
+            <text x="19" y="99" fontSize="7" fill="#94a3b8" fontFamily="Arial">Suites 200–250</text>
+            <text x="143" y="99" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">↑</text>
+          </svg>
+          <div className="absolute bottom-2 right-2 bg-blue-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">ADA ✓</div>
+        </div>
+      );
+
+    case 'Non-Illuminated Signs':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-50">
+          <div className="absolute inset-0 bg-gradient-to-br from-white to-slate-100" />
+          <svg viewBox="0 0 170 110" className="w-5/6">
+            <rect x="5" y="14" width="160" height="76" rx="4" fill="#1e40af"/>
+            <polygon points="5,52 52,14 52,90" fill="#2563eb"/>
+            <polygon points="165,52 118,14 118,90" fill="#2563eb"/>
+            <rect x="52" y="14" width="66" height="4" fill="#fbbf24"/>
+            <rect x="52" y="86" width="66" height="4" fill="#fbbf24"/>
+            <text x="85" y="55" fontSize="21" fontWeight="900" fill="white" fontFamily="Arial Black" textAnchor="middle">SALE</text>
+            <text x="85" y="70" fontSize="8" fill="#fbbf24" fontFamily="Arial" textAnchor="middle" fontWeight="bold">LIMITED TIME OFFER</text>
+            <circle cx="11" cy="21" r="3.5" fill="#93c5fd"/>
+            <circle cx="159" cy="21" r="3.5" fill="#93c5fd"/>
+            <circle cx="11" cy="83" r="3.5" fill="#93c5fd"/>
+            <circle cx="159" cy="83" r="3.5" fill="#93c5fd"/>
+          </svg>
+        </div>
+      );
+
+    case 'National Accounts':
+      return (
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-900">
+          <div className="absolute inset-0" style={{background:'radial-gradient(ellipse at 50% 55%, rgba(30,58,138,0.5) 0%, transparent 70%)'}} />
+          <svg viewBox="0 0 160 110" className="w-5/6">
+            <path d="M25 32 L140 32 L138 78 L85 83 L65 73 L22 70 Z" fill="#1e3a8a" opacity="0.4" stroke="#334155" strokeWidth="1"/>
+            <line x1="25" y1="55" x2="140" y2="55" stroke="#1e3a8a" strokeWidth="0.5" opacity="0.6"/>
+            <line x1="82" y1="32" x2="82" y2="83" stroke="#1e3a8a" strokeWidth="0.5" opacity="0.6"/>
+            <circle cx="72" cy="54" r="5.5" fill="#f59e0b" opacity="0.2"/>
+            <circle cx="72" cy="54" r="3.5" fill="#f59e0b"/>
+            <line x1="72" y1="54" x2="72" y2="62" stroke="#f59e0b" strokeWidth="1.5"/>
+            <text x="64" y="48" fontSize="6" fill="#fbbf24" fontFamily="Arial" fontWeight="bold">HQ</text>
+            <circle cx="95" cy="60" r="2.5" fill="#60a5fa" opacity="0.8"/>
+            <line x1="95" y1="60" x2="95" y2="66" stroke="#60a5fa" strokeWidth="1" opacity="0.8"/>
+            <circle cx="55" cy="47" r="2.5" fill="#60a5fa" opacity="0.8"/>
+            <line x1="55" y1="47" x2="55" y2="53" stroke="#60a5fa" strokeWidth="1" opacity="0.8"/>
+            <circle cx="112" cy="52" r="2.5" fill="#60a5fa" opacity="0.8"/>
+            <line x1="112" y1="52" x2="112" y2="58" stroke="#60a5fa" strokeWidth="1" opacity="0.8"/>
+            <circle cx="47" cy="63" r="2.5" fill="#60a5fa" opacity="0.8"/>
+            <line x1="47" y1="63" x2="47" y2="69" stroke="#60a5fa" strokeWidth="1" opacity="0.8"/>
+            <circle cx="125" cy="58" r="2.5" fill="#60a5fa" opacity="0.8"/>
+            <line x1="125" y1="58" x2="125" y2="64" stroke="#60a5fa" strokeWidth="1" opacity="0.8"/>
+            <text x="80" y="100" fontSize="6" fill="#475569" fontFamily="Arial" textAnchor="middle">Walmart · McDonald's · Chevron · Allstate</text>
+          </svg>
+        </div>
+      );
+
+    default:
+      return <div className="w-full h-full bg-slate-800" />;
+  }
+};
+
 const MeyerSignProfessional = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -27,50 +244,56 @@ const MeyerSignProfessional = () => {
     {
       name: 'Channel Letters',
       tagline: 'Illuminated storefront identity',
-      desc: '3D lit letters — front-lit, back-lit, or halo. The gold standard for retail.',
-      image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: '3D LED-lit letters built from CNC-routed aluminum — front-lit, back-lit, or reverse halo. The gold standard for retail.',
+      detail: 'Custom aluminum · LED · 24-hr visibility',
     },
     {
       name: 'Monument Signs',
       tagline: 'Architectural ground-level presence',
-      desc: 'Stone, brick, stucco, or metal bases that root your brand at the entrance.',
-      image: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: 'Stone, brick, stucco, concrete, or metal bases that anchor your brand at every entrance — built to match your building.',
+      detail: 'Stone · Brick · Stucco · LED optional',
     },
     {
       name: 'Pylon Signs',
-      tagline: 'Roadway & freeway visibility',
-      desc: 'Towering pole structures engineered for maximum sight lines at distance.',
-      image: 'https://images.unsplash.com/photo-1501452185849-1c6ff0d06e70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tagline: 'Roadway & freeway max-visibility',
+      desc: 'Towering pole structures — from simple poles to multi-tenant billboard superstructures — engineered for distance visibility.',
+      detail: 'Multi-tenant cabinets · LED panels · Crane install',
     },
     {
-      name: 'Digital Message Centers',
+      name: 'LED Message Centers',
       tagline: 'Live, remotely updated displays',
-      desc: 'Web-controlled LED panels for promotions, hours, and real-time messaging.',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: 'High-resolution LED panels integrated into monument or pylon signs. Update messages instantly from any device.',
+      detail: 'Remote-managed · Full color · Energy efficient',
     },
     {
       name: 'Vehicle Wraps',
       tagline: 'Your fleet as a moving billboard',
-      desc: 'Full and partial vinyl wraps that turn every mile into a brand impression.',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: 'Full and partial vinyl wraps that turn every mile into a brand impression — single vehicles to entire fleets.',
+      detail: 'Full or partial · Vinyl graphics · Fleet pricing',
     },
     {
-      name: 'Window Graphics',
+      name: 'Vinyl & Window Graphics',
       tagline: 'Storefronts that sell themselves',
-      desc: 'Perforated film, frosted vinyl, and full-color decals for any glass surface.',
-      image: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: 'Perforated film, frosted vinyl, full-color decals, wall murals, and lobby graphics for any glass or interior surface.',
+      detail: 'Window · Wall · Interior · Lobby',
     },
     {
       name: 'Wayfinding & ADA',
       tagline: 'Guide every visitor with clarity',
-      desc: 'Interior directories, room ID, ADA-compliant signs for campuses and complexes.',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      desc: 'Interior directories, room ID, ADA-compliant braille signs, and architectural wayfinding for campuses and complexes.',
+      detail: 'ADA compliant · Braille · Interior & exterior',
     },
     {
-      name: 'Wall & Building Signs',
-      tagline: 'Dimensional on-building branding',
-      desc: 'Illuminated panels, dimensional letters, blade signs — built for your facade.',
-      image: 'https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      name: 'Non-Illuminated Signs',
+      tagline: 'Banners, panels & flat signage',
+      desc: 'Full-color vinyl banners, HDU carved panels, aluminum signs, trade show displays, and PVC signage for every budget.',
+      detail: 'Banners · Metal · HDU · PVC · Foam board',
+    },
+    {
+      name: 'National Accounts',
+      tagline: 'Multi-location sign programs',
+      desc: 'Coordinated rollouts for franchises and national brands — consistent execution across every location, every time.',
+      detail: 'Walmart · McDonald\'s · Chevron · Allstate',
     },
   ];
 
@@ -294,7 +517,7 @@ const MeyerSignProfessional = () => {
       </nav>
 
       {/* ══════════════════════════════════════════════════════
-          HERO — Billboard style, locks to viewport
+          HERO — Two-column: copy left, sign collage right
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[600px] flex items-center bg-slate-950 overflow-hidden">
 
@@ -303,10 +526,10 @@ const MeyerSignProfessional = () => {
           <img
             src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
             alt="Commercial signage"
-            className="w-full h-full object-cover opacity-20 scale-105"
+            className="w-full h-full object-cover opacity-10 scale-105"
           />
           {/* Gradient: strong on left, fades right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/92 to-slate-950/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/50"></div>
           {/* Bottom fade into next section */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-950 to-transparent"></div>
         </div>
@@ -318,78 +541,127 @@ const MeyerSignProfessional = () => {
             backgroundSize: '48px 48px'
           }} />
 
-        {/* Content */}
+        {/* Content — two columns */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-          <div className="max-w-2xl xl:max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-center">
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1.5 mb-5 sm:mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse flex-shrink-0"></span>
-              <span className="text-amber-400 text-[11px] font-semibold tracking-widest uppercase">
-                Washington State · Est. 1960 · Licensed & Bonded
-              </span>
+            {/* LEFT: copy */}
+            <div className="max-w-xl">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1.5 mb-5 sm:mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse flex-shrink-0"></span>
+                <span className="text-amber-400 text-[11px] font-semibold tracking-widest uppercase">
+                  Washington State · Est. 1960 · Licensed & Bonded
+                </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.88] tracking-tight mb-4 sm:mb-5">
+                Built to Be<br />
+                <span className="text-amber-400">Impossible</span><br />
+                to Ignore.
+              </h1>
+
+              {/* Subline */}
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-7 max-w-lg">
+                Custom commercial signs — designed, fabricated &amp; installed under one roof.
+                Washington's sign experts for over 65 years.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <a
+                  href="#contact"
+                  className="group flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-7 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30"
+                >
+                  Get Your Free 3D Design
+                  <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+                <a
+                  href="tel:+13603369999"
+                  className="flex items-center justify-center gap-2.5 border border-white/25 hover:border-amber-500/60 text-white hover:text-amber-400 font-bold px-7 py-4 rounded-xl text-base transition-all"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  (360) 336-9999
+                </a>
+              </div>
+
+              {/* Process direction CTA */}
+              <a href="#process"
+                className="group inline-flex items-center gap-2 text-slate-500 hover:text-amber-400 transition-colors text-sm mb-5">
+                <svg className="w-4 h-4 flex-shrink-0 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span>How do we build your sign? See our 6-step process</span>
+              </a>
+
+              {/* Stats */}
+              <div className="flex items-center gap-6 pt-5 border-t border-white/10">
+                {[
+                  { n: '65+', l: 'Years' },
+                  { n: '5,000+', l: 'Signs Built' },
+                  { n: '100%', l: 'Permit Success' },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    {i > 0 && <div className="w-px h-6 bg-white/10" />}
+                    <div>
+                      <div className="text-xl sm:text-2xl font-black text-amber-400 leading-none">{s.n}</div>
+                      <div className="text-slate-500 text-xs mt-0.5">{s.l}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Headline — billboard-punchy, 3 lines */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.88] tracking-tight mb-4 sm:mb-5">
-              Built to Be<br />
-              <span className="text-amber-400">Impossible</span><br />
-              to Ignore.
-            </h1>
+            {/* RIGHT: Sign showcase collage — visible on lg+ only */}
+            <div className="hidden lg:block relative">
+              <div className="relative h-[480px] xl:h-[520px]">
 
-            {/* Single subline */}
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-7 max-w-lg">
-              Custom commercial signs — designed, fabricated &amp; installed under one roof.
-              Washington's sign experts for over 65 years.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-3">
-              <a
-                href="#contact"
-                className="group flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-7 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30"
-              >
-                Get Your Free 3D Design
-                <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-              <a
-                href="tel:+13603369999"
-                className="flex items-center justify-center gap-2.5 border border-white/25 hover:border-amber-500/60 text-white hover:text-amber-400 font-bold px-7 py-4 rounded-xl text-base transition-all"
-              >
-                <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                (360) 336-9999
-              </a>
-            </div>
-
-            {/* Value clarifier */}
-            <p className="text-slate-500 text-xs mb-7">
-              Includes free site visit + 3D rendering of your sign on your building · Zero commitment
-            </p>
-
-            {/* Stats — compact row */}
-            <div className="flex items-center gap-6 pt-5 border-t border-white/10">
-              {[
-                { n: '65+', l: 'Years' },
-                { n: '5,000+', l: 'Signs Built' },
-                { n: '100%', l: 'Permit Success' },
-              ].map((s, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  {i > 0 && <div className="w-px h-6 bg-white/10" />}
-                  <div>
-                    <div className="text-xl sm:text-2xl font-black text-amber-400 leading-none">{s.n}</div>
-                    <div className="text-slate-500 text-xs mt-0.5">{s.l}</div>
+                {/* Card 1 — Channel Letters (top right, primary) */}
+                <div className="absolute right-0 top-4 w-64 xl:w-72 h-44 rounded-2xl overflow-hidden border border-amber-500/25 shadow-2xl shadow-black/70"
+                  style={{transform:'rotate(2deg)'}}>
+                  <ServiceVisual name="Channel Letters" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-sm text-amber-400 text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Channel Letters
                   </div>
                 </div>
-              ))}
+
+                {/* Card 2 — Pylon Sign (bottom left) */}
+                <div className="absolute left-0 bottom-24 w-52 xl:w-56 h-40 rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-black/50"
+                  style={{transform:'rotate(-2deg)'}}>
+                  <ServiceVisual name="Pylon Signs" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Pylon Signs
+                  </div>
+                </div>
+
+                {/* Card 3 — Vehicle Wraps (bottom right) */}
+                <div className="absolute right-0 bottom-0 w-60 xl:w-64 h-40 rounded-2xl overflow-hidden border border-blue-500/20 shadow-2xl shadow-black/60"
+                  style={{transform:'rotate(1deg)'}}>
+                  <ServiceVisual name="Vehicle Wraps" />
+                  <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Vehicle Wraps
+                  </div>
+                </div>
+
+                {/* Floating badge — sign count */}
+                <div className="absolute left-10 top-6 bg-amber-500 text-slate-900 font-black text-xs px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30"
+                  style={{transform:'rotate(-3deg)'}}>
+                  9 Sign Types
+                </div>
+
+              </div>
             </div>
+
           </div>
         </div>
 
-        {/* Scroll cue — arrow only, no text crowding */}
+        {/* Scroll cue */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-40 hover:opacity-70 transition-opacity">
           <svg className="w-5 h-5 text-amber-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -398,7 +670,7 @@ const MeyerSignProfessional = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          SERVICES — What We Make
+          SERVICES — Complete 9-type lineup
       ══════════════════════════════════════════════════════ */}
       <section id="services" className="py-20 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -415,14 +687,13 @@ const MeyerSignProfessional = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {signTypes.map((s, i) => (
               <div key={i}
                 className="group reveal bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-slate-200/80 hover:-translate-y-1.5 transition-all duration-300">
                 <div className="relative overflow-hidden h-36 sm:h-44">
-                  <img src={s.image} alt={s.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent" />
+                  <ServiceVisual name={s.name} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                   <div className="absolute bottom-2 left-2 right-2">
                     <span className="bg-amber-500 text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide leading-tight">
                       {s.tagline}
@@ -431,7 +702,10 @@ const MeyerSignProfessional = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base mb-1">{s.name}</h3>
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{s.desc}</p>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-2">{s.desc}</p>
+                  <div className="text-amber-600/80 text-[10px] font-semibold uppercase tracking-wide border-t border-slate-100 pt-2">
+                    {s.detail}
+                  </div>
                 </div>
               </div>
             ))}
@@ -450,7 +724,46 @@ const MeyerSignProfessional = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          PROCESS — One Team Start to Finish (moved up)
+          WHY SIGNAGE MATTERS — ROI data
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-20 sm:py-24 bg-slate-950 relative overflow-hidden">
+
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 reveal">
+            <div className="inline-block bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Why Signage Matters
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
+              Your Sign Is Your<br />
+              <span className="text-amber-400">Best Sales Rep</span>
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              It works 24 hours a day, never calls in sick, and reaches every person who passes your location.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { stat: '85%', label: 'of customers first learn about a local business from its sign' },
+              { stat: '$1', label: 'invested in signage returns up to $28 in revenue for retail businesses' },
+              { stat: '60%', label: 'of consumers say they didn\'t visit a business because of a poor-looking sign' },
+              { stat: '50%', label: 'of walk-in customers are attracted by a new or updated sign' },
+            ].map((item, i) => (
+              <div key={i}
+                className="reveal bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                <div className="text-4xl sm:text-5xl font-black text-amber-400 mb-3 leading-none">{item.stat}</div>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          PROCESS — One Team Start to Finish
       ══════════════════════════════════════════════════════ */}
       <section id="process" className="py-20 sm:py-24 bg-slate-950 relative overflow-hidden">
 
@@ -492,6 +805,18 @@ const MeyerSignProfessional = () => {
                 <p className="text-slate-400 text-sm leading-relaxed">{step.body}</p>
               </div>
             ))}
+          </div>
+
+          {/* Process bottom CTA */}
+          <div className="text-center mt-10 reveal">
+            <a href="#contact"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-8 py-4 rounded-xl text-sm transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30">
+              Start with a Free Site Visit
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <p className="text-slate-600 text-xs mt-3">Free site consultation · 3D design concept · Zero commitment</p>
           </div>
         </div>
       </section>
@@ -535,6 +860,94 @@ const MeyerSignProfessional = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          VIDEO — See the Craft (dedicated section)
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-20 sm:py-24 bg-slate-950 relative overflow-hidden">
+
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(245,158,11,0.8) 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }} />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Left: copy */}
+            <div className="reveal">
+              <div className="inline-block bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+                See the Craft
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
+                Signs Built by<br />
+                <span className="text-amber-400">Real Craftsmen.</span>
+              </h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+                Every sign is cut, formed, wired, and finished in our Mount Vernon shop — by our team, with our tools, to our standards. No outsourcing. No shortcuts.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'CNC routing of aluminum channel letter components',
+                  'In-house LED assembly and electrical wiring',
+                  'Certified installation with our own crane crew',
+                  'From raw material to your storefront in weeks, not months',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact"
+                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-6 py-3.5 rounded-xl text-sm transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30">
+                Start Your Project
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Right: Video embed */}
+            <div className="reveal">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-slate-900">
+                {/* 16:9 video wrapper — swap VIDEO_ID below with your actual YouTube video ID */}
+                <div className="relative" style={{paddingBottom:'56.25%'}}>
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1&color=white"
+                    title="Meyer Sign — See the Craft"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                {/* Caption */}
+                <div className="px-5 py-4 border-t border-white/10 flex items-center justify-between">
+                  <div>
+                    <div className="text-white font-semibold text-sm">Inside the Meyer Sign Shop</div>
+                    <div className="text-slate-400 text-xs">Mount Vernon, WA · Est. 1960</div>
+                  </div>
+                  <div className="bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest">
+                    65+ Years
+                  </div>
+                </div>
+              </div>
+              <p className="text-slate-700 text-xs mt-3 text-center">
+                ↑ Replace <code className="bg-slate-800 text-amber-400 px-1 rounded">VIDEO_ID</code> in the iframe src with your actual YouTube video ID
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -860,11 +1273,12 @@ const MeyerSignProfessional = () => {
                       <option>Channel Letters (illuminated storefront)</option>
                       <option>Monument / Ground Sign</option>
                       <option>Pylon / Pole Sign</option>
-                      <option>Digital Message Center</option>
+                      <option>LED Message Center</option>
                       <option>Vehicle Wraps / Fleet Graphics</option>
-                      <option>Window Graphics</option>
+                      <option>Vinyl & Window Graphics</option>
                       <option>Wayfinding / ADA Signage</option>
-                      <option>Wall / Building Sign</option>
+                      <option>Non-Illuminated / Banners</option>
+                      <option>National Account / Multi-Location</option>
                       <option>Multiple types — full package</option>
                       <option>Not sure — need consultation</option>
                     </select>
@@ -919,7 +1333,7 @@ const MeyerSignProfessional = () => {
             <div>
               <h4 className="text-white font-bold mb-5 text-xs uppercase tracking-widest">Services</h4>
               <ul className="space-y-2.5">
-                {['Channel Letters', 'Monument Signs', 'Pylon Signs', 'Digital Message Centers', 'Vehicle Wraps', 'Window Graphics', 'Wayfinding & ADA', 'Wall Signs'].map(s => (
+                {['Channel Letters', 'Monument Signs', 'Pylon Signs', 'LED Message Centers', 'Vehicle Wraps', 'Vinyl & Window Graphics', 'Wayfinding & ADA', 'Non-Illuminated Signs', 'National Accounts'].map(s => (
                   <li key={s}>
                     <a href="#services" className="text-slate-500 hover:text-slate-200 text-sm transition-colors">{s}</a>
                   </li>
@@ -947,23 +1361,20 @@ const MeyerSignProfessional = () => {
               </div>
               <div className="space-y-1 text-xs text-slate-600">
                 <p>WA General Contractor #MEYERSI099QL</p>
-                <p>Electrical Contractor #MEYERE123RF</p>
+                <p>WA Electrical Contractor Licensed</p>
+                <p>UL Listed · ISA Member</p>
               </div>
             </div>
+
           </div>
 
-          <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-slate-600 text-sm">
-              © {new Date().getFullYear()} Meyer Sign & Advertising. All Rights Reserved.
+          <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-slate-600 text-xs">
+              © {new Date().getFullYear()} Meyer Sign & Advertising. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 text-xs text-slate-600">
-              {['UL Listed', 'ISA Member', 'Bonded & Insured', 'WA State Licensed', 'OSHA Certified'].map(badge => (
-                <span key={badge} className="flex items-center gap-1.5">
-                  <span className="w-1 h-1 rounded-full bg-amber-500/60" />
-                  {badge}
-                </span>
-              ))}
-            </div>
+            <p className="text-slate-700 text-xs">
+              Mount Vernon, WA · Est. 1960 · Licensed, Bonded & Insured
+            </p>
           </div>
         </div>
       </footer>

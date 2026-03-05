@@ -5,10 +5,21 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 const ContactPage = () => {
+  const PAGE_TITLE = 'Get a Free 3D Sign Design | Meyer Sign & Advertising — Mount Vernon, WA';
+  const PAGE_DESC  = "Start your commercial sign project with a free site visit and 3D rendering. No commitment. Meyer Sign — Washington's sign experts since 1960. Call (360) 424-1325.";
+  const PAGE_URL   = 'https://meyersign.com/contact';
+
   useEffect(() => {
-    document.title = 'Get a Free 3D Sign Design | Meyer Sign & Advertising — Mount Vernon, WA';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Start your commercial sign project with a free site visit and 3D rendering. No commitment. Meyer Sign — Washington\'s sign experts since 1960. Call (360) 424-1325.');
+    document.title = PAGE_TITLE;
+    const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+    set('meta[name="description"]',        'content', PAGE_DESC);
+    set('meta[property="og:title"]',        'content', PAGE_TITLE);
+    set('meta[property="og:description"]',  'content', PAGE_DESC);
+    set('meta[property="og:url"]',          'content', PAGE_URL);
+    set('meta[name="twitter:title"]',       'content', PAGE_TITLE);
+    set('meta[name="twitter:description"]', 'content', PAGE_DESC);
+    set('meta[name="twitter:url"]',         'content', PAGE_URL);
+    set('link[rel="canonical"]',            'href',    PAGE_URL);
     window.scrollTo(0, 0);
   }, []);
 

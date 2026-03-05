@@ -27,12 +27,22 @@ const ServicePage = ({
 }) => {
   const { pathname } = useLocation();
 
+  const BASE = 'https://meyersign.com';
+  const PAGE_URL = `${BASE}${pathname}`;
+
   useEffect(() => {
     document.title = title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', metaDescription);
+    const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+    set('meta[name="description"]',        'content', metaDescription);
+    set('meta[property="og:title"]',        'content', title);
+    set('meta[property="og:description"]',  'content', metaDescription);
+    set('meta[property="og:url"]',          'content', PAGE_URL);
+    set('meta[name="twitter:title"]',       'content', title);
+    set('meta[name="twitter:description"]', 'content', metaDescription);
+    set('meta[name="twitter:url"]',         'content', PAGE_URL);
+    set('link[rel="canonical"]',            'href',    PAGE_URL);
     window.scrollTo(0, 0);
-  }, [title, metaDescription]);
+  }, [title, metaDescription, PAGE_URL]);
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">

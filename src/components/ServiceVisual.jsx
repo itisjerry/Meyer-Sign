@@ -88,20 +88,40 @@ const ServiceVisual = ({ name }) => {
       );
     case 'Vehicle Wraps':
       return (
-        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-100">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-200" />
-          <svg viewBox="0 0 190 110" className="w-full h-full py-2 px-1">
-            <rect x="15" y="38" width="158" height="48" rx="5" fill="#1e3a8a"/>
-            <path d="M28 38 Q32 20 50 17 L145 17 Q162 17 165 38" fill="#172554"/>
-            <path d="M50 19 Q51 29 54 38 L118 38 L118 19 Z" fill="#7dd3fc" opacity="0.45"/>
-            <rect x="128" y="24" width="30" height="13" rx="3" fill="#7dd3fc" opacity="0.45"/>
-            <path d="M15 58 L72 40 L173 50 L173 58 Z" fill="#3b82f6" opacity="0.55"/>
-            <rect x="22" y="44" width="85" height="18" rx="2" fill="rgba(255,255,255,0.1)"/>
-            <text x="30" y="55" fontSize="7.5" fontWeight="900" fill="white" fontFamily="Arial">CASCADE PLUMBING</text>
-            <text x="30" y="64" fontSize="6" fill="#fbbf24" fontFamily="Arial">(360) 555-0100</text>
-            <circle cx="58" cy="89" r="12" fill="#0f172a"/><circle cx="58" cy="89" r="7" fill="#334155"/><circle cx="58" cy="89" r="3" fill="#64748b"/>
-            <circle cx="145" cy="89" r="12" fill="#0f172a"/><circle cx="145" cy="89" r="7" fill="#334155"/><circle cx="145" cy="89" r="3" fill="#64748b"/>
+        <div className="w-full h-full flex items-end justify-center relative overflow-hidden" style={{background:'linear-gradient(180deg,#0f172a 0%,#1e293b 60%,#334155 100%)'}}>
+          {/* Road/ground */}
+          <div className="absolute bottom-0 left-0 right-0 h-8" style={{background:'#1e293b'}} />
+          <div className="absolute bottom-7 left-0 right-0 h-0.5" style={{background:'repeating-linear-gradient(90deg,#f59e0b 0,#f59e0b 18px,transparent 18px,transparent 32px)'}} />
+          {/* Van body */}
+          <svg viewBox="0 0 200 95" className="w-full" style={{marginBottom:'10px'}}>
+            {/* Van 1 — full wrap */}
+            <rect x="8" y="30" width="112" height="44" rx="4" fill="#1d4ed8"/>
+            {/* Cab */}
+            <path d="M22 30 Q26 12 44 10 L88 10 Q100 10 103 30" fill="#1e40af"/>
+            {/* Windshield */}
+            <path d="M44 12 Q45 22 48 30 L88 30 L88 12 Z" fill="#93c5fd" opacity="0.5"/>
+            {/* Side window */}
+            <rect x="12" y="33" width="20" height="13" rx="2" fill="#93c5fd" opacity="0.4"/>
+            {/* Wrap graphics — bold diagonal stripe */}
+            <path d="M40 30 L60 74 L112 74 L112 30 Z" fill="#f59e0b" opacity="0.25"/>
+            {/* Brand name */}
+            <rect x="42" y="40" width="68" height="22" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <text x="76" y="49" fontSize="7" fontWeight="900" fill="white" fontFamily="Arial" textAnchor="middle" letterSpacing="1">APEX ELECTRIC</text>
+            <text x="76" y="58" fontSize="5.5" fill="#fbbf24" fontFamily="Arial" textAnchor="middle">(360) 424 · meyersign.com</text>
+            {/* Wheels */}
+            <circle cx="35" cy="78" r="11" fill="#0f172a"/><circle cx="35" cy="78" r="7" fill="#334155"/><circle cx="35" cy="78" r="3" fill="#64748b"/>
+            <circle cx="98" cy="78" r="11" fill="#0f172a"/><circle cx="98" cy="78" r="7" fill="#334155"/><circle cx="98" cy="78" r="3" fill="#64748b"/>
+            {/* Van 2 — behind, partial */}
+            <rect x="128" y="38" width="68" height="36" rx="3" fill="#1e3a8a" opacity="0.8"/>
+            <path d="M136 38 Q139 24 150 22 L178 22 Q186 22 188 38" fill="#172554" opacity="0.8"/>
+            <path d="M150 24 Q151 31 153 38 L178 38 L178 24 Z" fill="#7dd3fc" opacity="0.35"/>
+            <path d="M155 38 L168 74 L196 74 L196 38 Z" fill="#f59e0b" opacity="0.2"/>
+            <text x="164" y="56" fontSize="6" fontWeight="900" fill="white" fontFamily="Arial" textAnchor="middle">APEX</text>
+            <circle cx="143" cy="78" r="9" fill="#0f172a" opacity="0.8"/><circle cx="143" cy="78" r="5.5" fill="#334155" opacity="0.8"/>
+            <circle cx="186" cy="78" r="9" fill="#0f172a" opacity="0.8"/><circle cx="186" cy="78" r="5.5" fill="#334155" opacity="0.8"/>
           </svg>
+          <div className="absolute bottom-2 left-3 text-amber-400/60 text-[8px] font-bold tracking-widest uppercase">Full Fleet Wrap</div>
+          <div className="absolute top-2 right-3 bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[8px] font-bold px-2 py-0.5 rounded-full">Mobile Billboard</div>
         </div>
       );
     case 'Vinyl & Window Graphics':
@@ -125,44 +145,89 @@ const ServiceVisual = ({ name }) => {
       );
     case 'Wayfinding & ADA':
       return (
-        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-white">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100" />
-          <svg viewBox="0 0 160 110" className="w-5/6">
-            <rect x="8" y="5" width="144" height="100" rx="4" fill="#1e293b"/>
-            <rect x="12" y="9" width="136" height="92" rx="3" fill="#0f172a"/>
-            <rect x="12" y="9" width="136" height="19" rx="3" fill="#1e3a8a"/>
-            <text x="80" y="22" fontSize="7.5" fill="white" fontFamily="Arial" fontWeight="bold" textAnchor="middle">BUILDING DIRECTORY</text>
-            <line x1="12" y1="32" x2="148" y2="32" stroke="#1e3a8a" strokeWidth="0.7"/>
-            <text x="19" y="45" fontSize="7" fill="#94a3b8" fontFamily="Arial">Reception</text>
-            <text x="143" y="45" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">→</text>
-            <line x1="12" y1="51" x2="148" y2="51" stroke="#1e293b" strokeWidth="0.7"/>
-            <text x="19" y="63" fontSize="7" fill="#94a3b8" fontFamily="Arial">Suites 100–150</text>
-            <text x="143" y="63" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">→</text>
-            <line x1="12" y1="69" x2="148" y2="69" stroke="#1e293b" strokeWidth="0.7"/>
-            <text x="19" y="81" fontSize="7" fill="#94a3b8" fontFamily="Arial">Conference Rooms</text>
-            <text x="143" y="81" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">↑</text>
-            <line x1="12" y1="87" x2="148" y2="87" stroke="#1e293b" strokeWidth="0.7"/>
-            <text x="19" y="99" fontSize="7" fill="#94a3b8" fontFamily="Arial">Suites 200–250</text>
-            <text x="143" y="99" fontSize="11" fill="#f59e0b" fontFamily="Arial" textAnchor="end">↑</text>
+        <div className="w-full h-full flex items-center justify-center relative overflow-hidden" style={{background:'linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%)'}}>
+          {/* Hallway floor */}
+          <div className="absolute bottom-0 left-0 right-0 h-6" style={{background:'#cbd5e1'}} />
+          {/* Wall line */}
+          <div className="absolute top-0 left-0 right-0 h-8 bg-white/60" />
+          <svg viewBox="0 0 170 110" className="w-full h-full">
+            {/* Overhead directional blade signs */}
+            {/* Sign blade 1 — hanging from ceiling */}
+            <rect x="12" y="8" width="2" height="14" fill="#94a3b8"/>
+            <rect x="148" y="8" width="2" height="14" fill="#94a3b8"/>
+            <rect x="10" y="20" width="142" height="22" rx="3" fill="#1e3a8a" filter="url(#sh)"/>
+            <text x="50" y="29" fontSize="6.5" fill="white" fontFamily="Arial" fontWeight="bold">MAIN ENTRANCE</text>
+            <polygon points="155,26 162,31 155,36" fill="#f59e0b"/>
+            <text x="18" y="29" fontSize="6.5" fill="white" fontFamily="Arial" fontWeight="bold">← PARKING</text>
+            <line x1="85" y1="20" x2="85" y2="42" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+            <text x="50" y="38" fontSize="5.5" fill="#93c5fd" fontFamily="Arial">Suite 100–200 →</text>
+            <text x="18" y="38" fontSize="5.5" fill="#93c5fd" fontFamily="Arial">Suite 300–400</text>
+            {/* Wall-mounted room sign */}
+            <rect x="12" y="52" width="44" height="26" rx="2" fill="#1e293b"/>
+            <rect x="14" y="54" width="40" height="8" rx="1" fill="#1e3a8a"/>
+            <text x="34" y="60" fontSize="5.5" fill="white" fontFamily="Arial" fontWeight="bold" textAnchor="middle">RECEPTION</text>
+            <rect x="14" y="64" width="40" height="12" rx="1" fill="#0f172a"/>
+            <text x="34" y="68" fontSize="5" fill="#94a3b8" fontFamily="Arial" textAnchor="middle">Suite 101</text>
+            {/* Braille dots */}
+            {[0,1,2,3,4,5].map(i => (
+              <circle key={i} cx={17+((i%3)*5)} cy={75+(Math.floor(i/3)*3)} r="1" fill="#64748b"/>
+            ))}
+            {/* ADA wheelchair symbol */}
+            <circle cx="150" cy="65" r="4" fill="#1d4ed8"/>
+            <path d="M150 62 l0 4 l3 3" stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+            <circle cx="150" cy="60" r="1.5" fill="white"/>
+            {/* Restroom sign */}
+            <rect x="110" y="52" width="48" height="26" rx="2" fill="#1e293b"/>
+            <rect x="112" y="54" width="44" height="8" rx="1" fill="#0369a1"/>
+            <text x="134" y="60" fontSize="5.5" fill="white" fontFamily="Arial" fontWeight="bold" textAnchor="middle">RESTROOMS</text>
+            <text x="125" y="72" fontSize="8" fill="#60a5fa" fontFamily="Arial" textAnchor="middle">♀</text>
+            <text x="143" y="72" fontSize="8" fill="#93c5fd" fontFamily="Arial" textAnchor="middle">♂</text>
+            {/* Floor indicator strip */}
+            <rect x="0" y="90" width="170" height="20" fill="#e2e8f0"/>
+            <rect x="0" y="90" width="170" height="2" fill="#cbd5e1"/>
+            <text x="85" y="103" fontSize="6" fill="#64748b" fontFamily="Arial" textAnchor="middle" fontWeight="bold">FIRST FLOOR · MAIN BUILDING</text>
           </svg>
-          <div className="absolute bottom-2 right-2 bg-blue-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">ADA ✓</div>
+          <div className="absolute top-2 right-2 bg-blue-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full">ADA Compliant ✓</div>
         </div>
       );
     case 'Non-Illuminated Signs':
       return (
-        <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-slate-50">
-          <div className="absolute inset-0 bg-gradient-to-br from-white to-slate-100" />
-          <svg viewBox="0 0 170 110" className="w-5/6">
-            <rect x="5" y="14" width="160" height="76" rx="4" fill="#1e40af"/>
-            <polygon points="5,52 52,14 52,90" fill="#2563eb"/>
-            <polygon points="165,52 118,14 118,90" fill="#2563eb"/>
-            <rect x="52" y="14" width="66" height="4" fill="#fbbf24"/>
-            <rect x="52" y="86" width="66" height="4" fill="#fbbf24"/>
-            <text x="85" y="55" fontSize="21" fontWeight="900" fill="white" fontFamily="Arial Black" textAnchor="middle">SALE</text>
-            <text x="85" y="70" fontSize="8" fill="#fbbf24" fontFamily="Arial" textAnchor="middle" fontWeight="bold">LIMITED TIME OFFER</text>
-            <circle cx="11" cy="21" r="3.5" fill="#93c5fd"/><circle cx="159" cy="21" r="3.5" fill="#93c5fd"/>
-            <circle cx="11" cy="83" r="3.5" fill="#93c5fd"/><circle cx="159" cy="83" r="3.5" fill="#93c5fd"/>
+        <div className="w-full h-full flex items-end justify-center relative overflow-hidden" style={{background:'linear-gradient(180deg,#bfdbfe 0%,#93c5fd 40%,#dbeafe 100%)'}}>
+          {/* Ground/landscape */}
+          <div className="absolute bottom-0 left-0 right-0 h-10" style={{background:'#15803d'}} />
+          <div className="absolute bottom-9 left-0 right-0 h-2" style={{background:'#166534'}} />
+          {/* Building facade */}
+          <div className="absolute top-0 left-0 right-0 h-24" style={{background:'linear-gradient(180deg,#e7e5e4 0%,#d6d3d1 100%)'}} />
+          <div className="absolute top-0 left-0 right-0 h-24 opacity-20"
+            style={{backgroundImage:'repeating-linear-gradient(90deg,rgba(0,0,0,0.08) 0,rgba(0,0,0,0.08) 1px,transparent 1px,transparent 24px)'}} />
+          <svg viewBox="0 0 200 110" className="w-full h-full absolute inset-0">
+            {/* Building windows */}
+            {[20,50,80,110,140,170].map(x => (
+              <rect key={x} x={x} y="10" width="18" height="28" rx="1" fill="#bfdbfe" opacity="0.7"/>
+            ))}
+            {/* HDU carved panel sign on post */}
+            {/* Posts */}
+            <rect x="62" y="72" width="5" height="32" rx="1" fill="#78716c"/>
+            <rect x="133" y="72" width="5" height="32" rx="1" fill="#78716c"/>
+            {/* Main sign panel — dark walnut-style */}
+            <rect x="48" y="50" width="104" height="36" rx="3" fill="#292524"/>
+            {/* Carved border effect */}
+            <rect x="51" y="53" width="98" height="30" rx="2" fill="none" stroke="#78716c" strokeWidth="1.5"/>
+            {/* Sign content */}
+            <text x="100" y="67" fontSize="11" fontWeight="900" fill="#f5f0e8" fontFamily="Arial" textAnchor="middle" letterSpacing="2">LAKEWOOD</text>
+            <text x="100" y="78" fontSize="7" fill="#d6d3d1" fontFamily="Arial" textAnchor="middle" letterSpacing="3">PROFESSIONAL PARK</text>
+            {/* Decorative router line under title */}
+            <line x1="68" y1="70" x2="132" y2="70" stroke="#78716c" strokeWidth="0.8"/>
+            {/* Post caps */}
+            <rect x="58" y="48" width="13" height="5" rx="1" fill="#57534e"/>
+            <rect x="129" y="48" width="13" height="5" rx="1" fill="#57534e"/>
+            {/* Ground shrubs */}
+            <ellipse cx="55" cy="94" rx="14" ry="8" fill="#15803d"/>
+            <ellipse cx="145" cy="94" rx="14" ry="8" fill="#15803d"/>
+            <ellipse cx="100" cy="98" rx="40" ry="6" fill="#166534"/>
           </svg>
+          <div className="absolute bottom-2 left-3 text-white/70 text-[8px] font-bold tracking-widest uppercase">HDU Carved Panel</div>
+          <div className="absolute top-2 right-2 bg-stone-800/80 text-stone-200 text-[8px] font-bold px-2 py-0.5 rounded-full">No Power Required</div>
         </div>
       );
     case 'National Accounts':

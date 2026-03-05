@@ -8,7 +8,7 @@ const ContactPage = () => {
   useEffect(() => {
     document.title = 'Get a Free 3D Sign Design | Meyer Sign & Advertising — Mount Vernon, WA';
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Start your commercial sign project with a free site visit and 3D rendering. No commitment. Meyer Sign — Washington\'s sign experts since 1960. Call (360) 336-9999.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Start your commercial sign project with a free site visit and 3D rendering. No commitment. Meyer Sign — Washington\'s sign experts since 1960. Call (360) 424-1325.');
     window.scrollTo(0, 0);
   }, []);
 
@@ -67,25 +67,25 @@ const ContactPage = () => {
               {/* Contact details */}
               <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-4">
                 <h3 className="font-black text-slate-900 text-base mb-4">Prefer to reach out directly?</h3>
-                <a href="tel:+13603369999" className="flex items-center gap-3 group">
+                <a href="tel:+13604241325" className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-200 flex items-center justify-center text-amber-600 flex-shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">(360) 336-9999</div>
-                    <div className="text-slate-500 text-xs">Call or text · Mon–Fri</div>
+                    <div className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">(360) 424-1325</div>
+                    <div className="text-slate-500 text-xs">Toll Free: (800) 285-4598 · Fax: (360) 424-5212</div>
                   </div>
                 </a>
-                <a href="mailto:info@meyersign.com" className="flex items-center gap-3 group">
+                <a href="mailto:mike@meyersign.com" className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-200 flex items-center justify-center text-amber-600 flex-shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">info@meyersign.com</div>
+                    <div className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">mike@meyersign.com</div>
                     <div className="text-slate-500 text-xs">Response within 24 hours</div>
                   </div>
                 </a>
@@ -130,7 +130,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Email *</label>
-                      <input type="email" placeholder="you@business.com"
+                      <input type="email" placeholder="your@email.com"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm transition-all" />
                     </div>
                   </div>

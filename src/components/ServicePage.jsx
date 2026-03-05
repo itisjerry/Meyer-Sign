@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
 import ServiceVisual from './ServiceVisual';
@@ -25,6 +25,8 @@ const ServicePage = ({
   proofLine,
   related,
 }) => {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     document.title = title;
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -51,7 +53,7 @@ const ServicePage = ({
               <div className="flex items-center gap-2 text-slate-500 text-xs mb-6">
                 <Link to="/" className="hover:text-slate-300 transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/" className="hover:text-slate-300 transition-colors">Services</Link>
+                <a href="/#services" className="hover:text-slate-300 transition-colors">Services</a>
                 <span>/</span>
                 <span className="text-slate-400">{badge}</span>
               </div>
@@ -107,6 +109,38 @@ const ServicePage = ({
           </div>
         </div>
       </section>
+
+      {/* ── ALL SERVICES QUICK-NAV ── */}
+      <div className="bg-slate-900 border-b border-white/5 sticky top-16 z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 overflow-x-auto scrollbar-none">
+          <div className="flex items-center gap-1 min-w-max">
+            <span className="text-slate-500 text-xs font-semibold uppercase tracking-widest mr-2 flex-shrink-0">Services:</span>
+            {[
+              { name: 'Channel Letters',        path: '/services/channel-letters' },
+              { name: 'Monument Signs',          path: '/services/monument-signs' },
+              { name: 'Pylon Signs',             path: '/services/pylon-signs' },
+              { name: 'LED Message Centers',     path: '/services/led-message-centers' },
+              { name: 'Vehicle Wraps',           path: '/services/vehicle-wraps' },
+              { name: 'Vinyl & Window',          path: '/services/vinyl-window-graphics' },
+              { name: 'Wayfinding & ADA',        path: '/services/wayfinding-ada' },
+              { name: 'Non-Illuminated',         path: '/services/non-illuminated-signs' },
+              { name: 'National Accounts',       path: '/services/national-accounts' },
+            ].map((s) => (
+              <Link
+                key={s.path}
+                to={s.path}
+                className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  pathname === s.path
+                    ? 'bg-amber-500/20 border border-amber-500/40 text-amber-400'
+                    : 'text-slate-400 hover:text-white hover:bg-white/8'
+                }`}
+              >
+                {s.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* ── INTRO / WHY ── */}
       <section className="py-16 sm:py-20 bg-white">

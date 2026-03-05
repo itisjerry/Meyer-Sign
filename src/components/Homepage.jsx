@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
 import ServiceVisual from './ServiceVisual';
+import PortfolioVisual from './PortfolioVisual';
 
 const MeyerSignProfessional = () => {
   useEffect(() => {
@@ -287,13 +288,13 @@ const MeyerSignProfessional = () => {
                   </svg>
                 </a>
                 <a
-                  href="tel:+13603369999"
+                  href="tel:+13604241325"
                   className="flex items-center justify-center gap-2.5 border border-white/25 hover:border-amber-500/60 text-white hover:text-amber-400 font-bold px-7 py-4 rounded-xl text-base transition-all"
                 >
                   <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  (360) 336-9999
+                  (360) 424-1325
                 </a>
               </div>
 
@@ -474,6 +475,125 @@ const MeyerSignProfessional = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════
+          START HERE — Customer Journey Guide
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          <div className="text-center max-w-2xl mx-auto mb-12 reveal">
+            <div className="inline-block bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Not Sure Where to Start?
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4 leading-tight">
+              Tell Us What You're<br />
+              <span className="text-blue-700">Trying to Solve</span>
+            </h2>
+            <p className="text-slate-500 text-base sm:text-lg">
+              Most customers start with a goal, not a sign type. Tell us your situation — we'll guide you to the right solution.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {[
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                ),
+                scenario: '"I want people to notice my storefront from the street."',
+                solution: 'Channel Letters or Pylon Sign',
+                path: '/services/channel-letters',
+                color: 'amber',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
+                scenario: '"I need a sign at my property entrance or road frontage."',
+                solution: 'Monument or Pylon Sign',
+                path: '/services/monument-signs',
+                color: 'blue',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                ),
+                scenario: '"My vehicles and fleet need to advertise my business."',
+                solution: 'Vehicle Wraps',
+                path: '/services/vehicle-wraps',
+                color: 'blue',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                  </svg>
+                ),
+                scenario: '"I\'m opening a new location and need a complete sign package."',
+                solution: 'Talk to Us — We Handle Everything',
+                path: '/contact',
+                color: 'amber',
+              },
+            ].map((item, i) => (
+              <Link key={i} to={item.path}
+                className={`reveal group bg-white border rounded-2xl p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${
+                  item.color === 'amber' ? 'border-amber-200 hover:border-amber-300' : 'border-blue-100 hover:border-blue-200'
+                }`}>
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
+                  item.color === 'amber'
+                    ? 'bg-amber-500/10 border border-amber-200 text-amber-600'
+                    : 'bg-blue-50 border border-blue-200 text-blue-600'
+                }`}>
+                  {item.icon}
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed mb-3 italic">
+                  {item.scenario}
+                </p>
+                <div className={`flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide ${
+                  item.color === 'amber' ? 'text-amber-600' : 'text-blue-600'
+                }`}>
+                  <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                  {item.solution}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Bottom reassurance */}
+          <div className="reveal bg-slate-50 border border-slate-100 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex-1">
+              <h3 className="font-black text-slate-900 text-lg mb-2">Still not sure? That's exactly what we're here for.</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                In 65 years we've handled every possible sign scenario — new businesses, rebrands, multi-location rollouts, ADA compliance, historic districts, HOA restrictions.
+                Just tell us your situation and we'll figure out the best path together. No jargon, no pressure.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+              <a href="tel:+13604241325"
+                className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-5 py-3 rounded-xl text-sm transition-all whitespace-nowrap">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                Call (360) 424-1325
+              </a>
+              <Link to="/contact"
+                className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-5 py-3 rounded-xl text-sm transition-all whitespace-nowrap">
+                Free Consultation →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
           PROCESS — One Team Start to Finish
       ══════════════════════════════════════════════════════ */}
       <section id="process" className="py-20 sm:py-24 bg-slate-950 relative overflow-hidden">
@@ -556,8 +676,9 @@ const MeyerSignProfessional = () => {
             {portfolio.map((p, i) => (
               <div key={i}
                 className="reveal group relative overflow-hidden rounded-2xl border border-slate-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                <img src={p.image} alt={p.title}
-                  className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="w-full h-56 sm:h-64 group-hover:scale-105 transition-transform duration-500">
+                  <PortfolioVisual title={p.title} />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-1">{p.type}</div>
@@ -672,12 +793,12 @@ const MeyerSignProfessional = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
-              <a href="tel:+13603369999"
+              <a href="tel:+13604241325"
                 className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-amber-400 font-bold px-6 py-3.5 rounded-xl text-sm transition-all whitespace-nowrap">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                (360) 336-9999
+                (360) 424-1325
               </a>
               <a href="#contact"
                 className="bg-white hover:bg-slate-50 text-slate-900 font-black px-6 py-3.5 rounded-xl text-sm transition-all whitespace-nowrap">
@@ -896,7 +1017,7 @@ const MeyerSignProfessional = () => {
               </p>
 
               <div className="space-y-4">
-                <a href="tel:+13603369999"
+                <a href="tel:+13604241325"
                   className="flex items-center gap-4 group">
                   <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0 group-hover:bg-amber-500/20 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -904,11 +1025,11 @@ const MeyerSignProfessional = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">(360) 336-9999</div>
+                    <div className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">(360) 424-1325</div>
                     <div className="text-slate-500 text-sm">Call or text anytime</div>
                   </div>
                 </a>
-                <a href="mailto:info@meyersign.com"
+                <a href="mailto:mike@meyersign.com"
                   className="flex items-center gap-4 group">
                   <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0 group-hover:bg-amber-500/20 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -916,7 +1037,7 @@ const MeyerSignProfessional = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">info@meyersign.com</div>
+                    <div className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">mike@meyersign.com</div>
                     <div className="text-slate-500 text-sm">Response within 24 hours</div>
                   </div>
                 </a>
@@ -929,6 +1050,7 @@ const MeyerSignProfessional = () => {
                   <div>
                     <div className="text-white font-bold text-lg">2608 Old Highway 99 South</div>
                     <div className="text-slate-500 text-sm">Mount Vernon, WA 98273</div>
+                    <div className="text-slate-600 text-xs mt-0.5">Toll Free: (800) 285-4598 · Fax: (360) 424-5212</div>
                   </div>
                 </div>
               </div>
@@ -970,7 +1092,7 @@ const MeyerSignProfessional = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Email *</label>
-                      <input type="email" placeholder="you@business.com"
+                      <input type="email" placeholder="your@email.com"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm transition-all" />
                     </div>
                   </div>

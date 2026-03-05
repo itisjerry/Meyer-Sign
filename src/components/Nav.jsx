@@ -62,13 +62,13 @@ const Nav = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+        {/* Logo — always links home, large touch area */}
+        <Link to="/" className="flex items-center gap-3 group flex-shrink-0 py-3 -my-3 pr-2">
           {/* Try real logo first; fall back to letter mark */}
           <div className="relative h-10 flex items-center">
             <img
               src="/logo.png"
-              alt="Meyer Sign & Advertising"
+              alt="Meyer Sign & Advertising — Home"
               className="h-10 w-auto max-w-[140px] object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -175,6 +175,15 @@ const Nav = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-slate-950 border-t border-white/10 px-4 py-4 max-h-[80vh] overflow-y-auto">
+
+          {/* Home */}
+          <Link to="/"
+            className="flex items-center gap-2 text-slate-200 hover:text-amber-400 font-medium py-3 border-b border-white/5 text-sm transition-colors">
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Home
+          </Link>
 
           {/* Services expandable */}
           <button

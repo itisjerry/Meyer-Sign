@@ -925,7 +925,7 @@ const MeyerSignProfessional = () => {
                 <div className="relative" style={{paddingBottom:'56.25%'}}>
                   <iframe
                     className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1&color=white"
+                    src="https://www.youtube.com/embed/1qWcpeVx3cg?rel=0&modestbranding=1&color=white"
                     title="Meyer Sign — See the Craft"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -943,9 +943,6 @@ const MeyerSignProfessional = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-slate-700 text-xs mt-3 text-center">
-                ↑ Replace <code className="bg-slate-800 text-amber-400 px-1 rounded">VIDEO_ID</code> in the iframe src with your actual YouTube video ID
-              </p>
             </div>
 
           </div>
